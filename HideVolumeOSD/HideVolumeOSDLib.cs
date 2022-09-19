@@ -39,8 +39,9 @@ namespace HideVolumeOSD
 
 			while (hWndInject == IntPtr.Zero && count < 9)
 			{
-				keybd_event((byte)Keys.VolumeUp, 0, 0, 0);
-				keybd_event((byte)Keys.VolumeDown, 0, 0, 0);
+				keybd_event((byte)Keys.VolumeMute, 0, 0, 0);
+				System.Threading.Thread.Sleep(10);
+				keybd_event((byte)Keys.VolumeMute, 0, 0, 0);
 
 				hWndInject = FindOSDWindow(true);
 
@@ -143,8 +144,9 @@ namespace HideVolumeOSD
 
 			// show window on the screen
 
-			keybd_event((byte)Keys.VolumeUp, 0, 0, 0);
-			keybd_event((byte)Keys.VolumeDown, 0, 0, 0);
+			keybd_event((byte)Keys.VolumeMute, 0, 0, 0);
+			System.Threading.Thread.Sleep(10);
+			keybd_event((byte)Keys.VolumeMute, 0, 0, 0);
 
 			if (ni != null)
 				ni.Icon = Resources.Icon;
