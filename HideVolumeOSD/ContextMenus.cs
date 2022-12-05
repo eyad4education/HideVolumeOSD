@@ -1,20 +1,20 @@
-﻿using System;
-using System.Diagnostics;
+﻿
+using System;
 using System.Windows.Forms;
 using HideVolumeOSD.Properties;
-using System.Drawing;
 
 namespace HideVolumeOSD
 {
-	/// <summary>
-	/// 
-	/// </summary>
-	public class ContextMenus
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ContextMenus
 	{
 		/// <summary>
 		/// Is the About box displayed?
 		/// </summary>
 		bool isAboutLoaded = false;
+		bool isSettingsLoaded = false;
 
 		HideVolumeOSDLib hideVolumeOSDLib;
 		ToolStripMenuItem switchMenu = null;		
@@ -34,8 +34,9 @@ namespace HideVolumeOSD
 
 			// Add the default menu options.
 			ContextMenuStrip menu = new ContextMenuStrip();
+
 			ToolStripMenuItem item;
-			ToolStripSeparator sep;
+			ToolStripSeparator sep;			
 
 			ImageList il = new ImageList();
 
@@ -47,7 +48,7 @@ namespace HideVolumeOSD
 			menu.ImageList = il;
 
 			// Hide OSD
-			item = new ToolStripMenuItem();
+			item = new ToolStripMenuItem();			
 			
 			if (!Settings.Default.HideOSD)
 			{
@@ -69,10 +70,16 @@ namespace HideVolumeOSD
 
 			// About
 			item = new ToolStripMenuItem();
-			item.Text = "About";
+			item.Text = "Settings...";
+			item.Click += new EventHandler(Settings_Click);
+			//item.ImageIndex = 2;
+			menu.Items.Add(item);
+
+			// About
+			item = new ToolStripMenuItem();
+			item.Text = "About...";
 			item.Click += new EventHandler(About_Click);
 			item.ImageIndex = 2;
-			//item.im
 			menu.Items.Add(item);
 
 			// Separator
@@ -85,6 +92,8 @@ namespace HideVolumeOSD
 			item.Click += new System.EventHandler(Exit_Click);
 			item.ImageIndex = 3;
 			menu.Items.Add(item);
+
+			//DarkModeHelper.SwitchMenuTheme(menu);
 
 			return menu;
 		}
@@ -113,6 +122,21 @@ namespace HideVolumeOSD
 			}
 			
 			Settings.Default.Save();
+		}
+
+		/// <summary>
+		/// Handles the Click event of the UserSettings control.
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
+		void Settings_Click(object sender, EventArgs e)
+		{
+			if (!isSettingsLoaded)
+			{
+				isSettingsLoaded = true;
+				new UserSettings().ShowDialog();
+				isSettingsLoaded = false;
+			}
 		}
 
 		/// <summary>

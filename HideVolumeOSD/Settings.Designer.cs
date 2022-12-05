@@ -12,7 +12,7 @@ namespace HideVolumeOSD {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -32,6 +32,78 @@ namespace HideVolumeOSD {
             }
             set {
                 this["HideOSD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool VolumeInSystemTray {
+            get {
+                return ((bool)(this["VolumeInSystemTray"]));
+            }
+            set {
+                this["VolumeInSystemTray"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("600")]
+        public int VolumeHideDelay {
+            get {
+                return ((int)(this["VolumeHideDelay"]));
+            }
+            set {
+                this["VolumeHideDelay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int VolumeDisplaySize {
+            get {
+                return ((int)(this["VolumeDisplaySize"]));
+            }
+            set {
+                this["VolumeDisplaySize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool VolumeDisplayNearClock {
+            get {
+                return ((bool)(this["VolumeDisplayNearClock"]));
+            }
+            set {
+                this["VolumeDisplayNearClock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool VolumeDisplayLight {
+            get {
+                return ((bool)(this["VolumeDisplayLight"]));
+            }
+            set {
+                this["VolumeDisplayLight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("32")]
+        public int VolumeDisplayOffset {
+            get {
+                return ((int)(this["VolumeDisplayOffset"]));
+            }
+            set {
+                this["VolumeDisplayOffset"] = value;
             }
         }
     }

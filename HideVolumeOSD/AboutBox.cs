@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -15,9 +16,20 @@ namespace HideVolumeOSD
 			this.labelCopyright.Text = AssemblyCopyright;
 		}
 
-		#region Assembly Attribute Accessors
+        protected override void OnVisibleChanged(EventArgs e)
+        {
+            base.OnVisibleChanged(e);
 
-		public string AssemblyTitle
+			if (Visible)
+            {
+				Rectangle rect = Screen.FromHandle(this.Handle).Bounds;
+				Location = new Point(rect.Width - this.Width - 64, rect.Height - this.Height - 96);
+			}
+		}
+
+        #region Assembly Attribute Accessors
+
+        public string AssemblyTitle
 		{
 			get
 			{

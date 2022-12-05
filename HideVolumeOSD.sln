@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HideVolumeOSDApp", "HideVolumeOSD\HideVolumeOSDApp.csproj", "{F317AF2E-9704-4A2A-BDAE-B4662ED9483B}"
 EndProject
@@ -22,5 +22,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE176111-279A-41ED-8CE8-5BC276D9FEA0}
 	EndGlobalSection
 EndGlobal
